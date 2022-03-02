@@ -1,8 +1,13 @@
-import React from 'react'
-
+import React,{useEffect} from 'react'
+import {fetchTrendingMovies} from "../../hooks/useFetch";
+import {API_KEY,URL} from "../../constants";
+ 
 const HomePage = () => {
-
-  return (
+  useEffect(()=>{
+    
+  
+  },[])
+  return (  
     <div>homePage</div>
   )
 }
