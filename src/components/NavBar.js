@@ -11,7 +11,14 @@ const NavBar = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
         <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-          <Nav.Link as={NavLink} to="/movies">Movies</Nav.Link>
+          {/* <Nav.Link as={NavLink} to="/movies">Movies</Nav.Link> */}
+          <NavDropdown title="Movies" id="basic-nav-dropdown">
+          <NavDropdown.Item  as={NavLink} to="/movies">All</NavDropdown.Item>
+            <NavDropdown.Item  as={NavLink} to="/movies/popular">Popular</NavDropdown.Item>
+            <NavDropdown.Item  as={NavLink} to="/movies/topRated">Top Rated</NavDropdown.Item>
+            <NavDropdown.Item  as={NavLink} to="/movies/trending">Trending</NavDropdown.Item>
+            <NavDropdown.Item  as={NavLink} to="/movies/upcoming">Upcoming</NavDropdown.Item>
+          </NavDropdown>
           <Nav.Link as={NavLink} to="/actors">Actors</Nav.Link>
           <NavDropdown title="Genres" id="basic-nav-dropdown">
             <NavDropdown.Item  as={NavLink} to="/movies/horror">Horror</NavDropdown.Item>
