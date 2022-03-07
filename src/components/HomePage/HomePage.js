@@ -1,7 +1,5 @@
-import React,{useEffect} from 'react'
-import {fetchTrendingMovies} from "../../hooks/useFetch";
-import {API_KEY,URL} from "../../constants";
- 
+import React,{useEffect} from 'react';
+
 const HomePage = () => {
   useEffect(()=>{
     
