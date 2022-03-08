@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 44ee49c448d607aa4ca41971242886494f6f90e8
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import HomePage from './components/HomePage/HomePage';
@@ -10,24 +6,25 @@ import MoviesPage from './components/MoviesPage/MoviesPage';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import PageNotFound from './components/404';
+import MoviesType from './components/MoviesPage/MoviesType';
+import {Container} from "react-bootstrap";
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div className="App">
-        Hello
-=======
-    <div >
+    <Container >
       <NavBar />
       <Routes>
-        <Route element={<MoviesPage/>} path="/movies" />
+        <Route element={<MoviesPage/>} path="/movies" /> 
+        <Route element={<MoviesType type="popular"/>} path="/movies/popular" />      
+        <Route element={<MoviesType type="topRated"/>} path="/movies/topRated" />      
+        <Route element={<MoviesType type="upcoming"/>} path="/movies/upcoming" />      
+        <Route element={<MoviesType type="trending"/>} path="/movies/trending" />      
         <Route element={<ActorsPage/>} path="/actors" />
         <Route element={<HomePage/>} path="/" />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Footer />
->>>>>>> 44ee49c448d607aa4ca41971242886494f6f90e8
-    </div>
+    </Container>
   );
 }
 

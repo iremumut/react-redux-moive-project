@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{useEffect} from 'react';
 
 const HomePage = () => {
-
-  return (
+  useEffect(()=>{
+    
+  
+  },[])
+  return (  
     <div>homePage</div>
   )
 }
