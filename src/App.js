@@ -11,8 +11,9 @@ import {Container} from "react-bootstrap";
 
 function App() {
   return (
+    <>
+    <NavBar />
     <Container >
-      <NavBar />
       <Routes>
         <Route element={<MoviesPage/>} path="/movies" /> 
         <Route element={<MoviesType type="popular"/>} path="/movies/popular" />      
@@ -25,6 +26,7 @@ function App() {
       </Routes>
       <Footer />
     </Container>
+    </>
   );
 }
 

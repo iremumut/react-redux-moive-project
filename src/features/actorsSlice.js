@@ -14,11 +14,11 @@ const actorsSlice = createSlice({
         },
         FETCH_ACTORS_SUCCESS: (state, action) => {
             state.entities.isLoading = false
-            //state.entities.actors = action.payload;
-            action.payload.forEach((actor) => {
+            state.entities.actors.push(...action.payload);
+            /*action.payload.forEach((actor) => {
                 if(!state.entities.actor.include(actor)){
                 state.entities.actors.push(actor)}
-                });
+                });*/
             state.entities.error = " "
         },       
         FETCH_ACTORS_FAILURE: (state, action) => {
@@ -37,10 +37,26 @@ export default actorsSlice.reducer;
 export const fetchPopularActors = () => {
     return (dispatch) => {
         dispatch(FETCH_ACTORS_REQUEST())
-        axios.get(`movie/{movie_id}/credits?api_key=${API_KEY}&language=en-US`
+        axios.get(`${URL}person/popular?api_key=${API_KEY}&language=en-US`
         )
             .then((response) => {
                 const actors = response.data.results;
+                dispatch(FETCH_ACTORS_SUCCESS(actors))
+            })
+            .catch((error) => {
+                dispatch(FETCH_ACTORS_FAILURE(error.message))
+            })
+    }
+}
+
+export const fetchMovieActors = (movie_id) => {
+    return (dispatch) => {
+        dispatch(FETCH_ACTORS_REQUEST())
+        axios.get(`${URL}movie/${movie_id}/credits?api_key=${API_KEY}&language=en-US`
+        )
+            .then((response) => {
+                const actors = response.data.cast;
+                console.log(response);
                 dispatch(FETCH_ACTORS_SUCCESS(actors))
             })
             .catch((error) => {

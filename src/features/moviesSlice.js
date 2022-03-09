@@ -5,7 +5,7 @@ import axios from 'axios';
 const moviesSlice = createSlice({
     name: "movies",
     initialState: {
-        entities: { isLoading: false, allMovies: {popularMovies: [], topRatedMovies: [], upcomingMovies: [], trendingMovies:[] }, error: "" },
+        entities: { isLoading: false, allMovies: {popularMovies: [], topRatedMovies: [], upcomingMovies: [], trendingMovies:[] , allMovies: [] }, error: "" },
     },
     reducers: {
         FETCH_MOVIES_REQUEST: (state, action) => {
@@ -13,7 +13,7 @@ const moviesSlice = createSlice({
         },
         FETCH_POPULAR_MOVIES_SUCCESS: (state, action) => {
             state.entities.isLoading = false
-            state.entities.allMovies.popularMovies = action.payload
+            state.entities.allMovies.popularMovies = action.payload;
             state.entities.error = " "
         },
         FETCH_TOP_RATED_MOVIES_SUCCESS: (state, action) => {

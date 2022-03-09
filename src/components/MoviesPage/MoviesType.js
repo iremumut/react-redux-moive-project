@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPopularMovies, fetchTopRatedMovies, fetchUpcomingMovies, fetchTrendingMovies } from '../../features/moviesSlice';
+import MovieCard from './MovieCard';
+import {Col,Row} from "react-bootstrap";
 
 const MoviesType = ({ type }) => {
     const movies = useSelector(store => store.movies.entities.allMovies[`${type}Movies`])
@@ -42,15 +44,12 @@ const MoviesType = ({ type }) => {
 
 
     return (
-        <>
-            <h1>{title} Movies</h1>
-            <div>
+        <Row>
+            <h2 className='text-center fs-1'>{title} Movies</h2>
                 {movies.map((movie) => {
-                    return <div key={movie.id}>{movie.original_title}</div>
+                    return <MovieCard key={movie.id} movie={movie}></MovieCard>
                 })}
-                <hr />
-            </div>
-        </>
+        </Row>
     )
 }
 
