@@ -1,8 +1,8 @@
 import {Card,Col} from "react-bootstrap";
-import "./Movie.css";
+import "./MovieCard.css";
 import { NavLink } from 'react-router-dom';
 
-const Movie = ({movie:{title,poster_path,vote_average,overview}}) => {
+const MovieCard = ({movie:{title,poster_path,vote_average,overview}}) => {
 
     return(
     <Col lg={3} md={6}>
@@ -18,4 +18,4 @@ const Movie = ({movie:{title,poster_path,vote_average,overview}}) => {
     )
 }
 
-export default Movie;
+export default MovieCard;

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPopularMovies, fetchTopRatedMovies, fetchUpcomingMovies, fetchTrendingMovies } from '../../features/moviesSlice';
-import Movie from './Movie';
+import MovieCard from './MovieCard';
 import { Row } from 'react-bootstrap';
 
 const MoviesPage = () => {
@@ -26,7 +26,7 @@ const MoviesPage = () => {
         <Row>
         <h2>Popular Movies</h2>
         {movies.popularMovies?.map((movie) => {
-          return <Movie key={movie.id} movie={movie}></Movie>
+          return <MovieCard key={movie.id} movie={movie}></MovieCard>
         })}
         <hr />
         </Row>
