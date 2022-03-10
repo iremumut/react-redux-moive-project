@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchPopularMovies, fetchTopRatedMovies, fetchUpcomingMovies, fetchTrendingMovies } from '../../features/moviesSlice';
 import MovieCard from './MovieCard';
 import { Row } from 'react-bootstrap';
+import { v4 as uuid } from 'uuid';
 
 const MoviesPage = () => {
 
@@ -22,14 +23,14 @@ const MoviesPage = () => {
   allMovies = [...movies.popularMovies,...movies.topRatedMovies,...movies.upcomingMovies,...movies.trendingMovies];
 
   
-  console.log(allMovies);
+  //console.log(allMovies);
  
 
 
   return (
     <Row className='my-2'>
         {allMovies.map((movie) => {
-          return <MovieCard key={movie.id} movie={movie}></MovieCard>
+          return <MovieCard key={uuid()} movie={movie}></MovieCard>
         })}
     </Row>
 

@@ -9,7 +9,7 @@ const ActorsPage = () => {
 
   useEffect(() => {
     dispatch(fetchPopularActors());
-    dispatch(fetchMovieActors(" 833425"));
+    dispatch(fetchMovieActors("833425"));
   }, [dispatch])
 
   //console.log(actors);

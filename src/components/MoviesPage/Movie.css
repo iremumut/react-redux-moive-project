@@ -1,0 +1,15 @@
+.movie-backdrop {
+    filter: brightness(30%);
+    border-radius: 10px;
+    box-shadow: 1px 5px 10px black;
+}
+
+.movie-poster {
+    box-shadow: 1px 5px 10px black;
+}
+
+.movie-details {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}

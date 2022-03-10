@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import PageNotFound from './components/404';
 import MoviesType from './components/MoviesPage/MoviesType';
+import Movie from './components/MoviesPage/Movie';
 import {Container} from "react-bootstrap";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <NavBar />
     <Container >
       <Routes>
+        <Route element={<Movie />} path="/movies/:id"/>
         <Route element={<MoviesPage/>} path="/movies" /> 
         <Route element={<MoviesType type="popular"/>} path="/movies/popular" />      
         <Route element={<MoviesType type="topRated"/>} path="/movies/topRated" />      
