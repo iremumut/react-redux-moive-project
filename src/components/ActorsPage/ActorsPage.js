@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPopularActors ,fetchMovieActors } from '../../features/actorsSlice';
+import ActorCard from "./ActorCard";
+import {Row} from  "react-bootstrap";
+import { v4 as uuid } from 'uuid';
+
 
 const ActorsPage = () => {
 
@@ -9,12 +13,16 @@ const ActorsPage = () => {
 
   useEffect(() => {
     dispatch(fetchPopularActors());
-    dispatch(fetchMovieActors("833425"));
+    //dispatch(fetchMovieActors("833425"));
   }, [dispatch])
 
-  //console.log(actors);
+  console.log(actors);
   return (
-    <div>actorsPage</div>
+    <Row>
+      {actors.map((actor) => {
+        return <ActorCard key={uuid()} actor={actor}></ActorCard>
+      })}
+    </Row>
   )
 }
 
